@@ -2,11 +2,19 @@
 
 - Vue3について
     - https://ja.vuejs.org/
+        - 公式サイトはjsで表現されていることが多い
     - Vue2の終了
+    - Vueでの登場人物
+        - Vue.js
+        - Vue CLI / Vite
+        - Vuex / Pinia
+        - Vuetify
     - 文法の違い
         - Options API / Composition API
             - https://ja.vuejs.org/guide/extras/composition-api-faq.html
         - SFC(Single-File Components)
+        - refを使う理由
+            - https://ja.vuejs.org/guide/essentials/reactivity-fundamentals
     - Tooling
         - Vite
             - [Vue CLI->Vite推奨](https://vuejs.org/guide/scaling-up/tooling.html)
@@ -29,16 +37,6 @@ https://v3-migration.vuejs.org/
 npm install -g yarn
 ```
 
----
+# 内容
 
-### Vue CLI
-
-vue create [project]
-
-### Vuetify
-
-yarn create vuetify
-
-### Vite
-
-yarn create vite
+- [Vueプロジェクト作成](docs/01_create_project.md)
