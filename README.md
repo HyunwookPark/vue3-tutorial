@@ -1,30 +1,43 @@
-# vue3-tutorial
+# 目次
 
-- Vue3について
-    - https://ja.vuejs.org/
-        - 公式サイトはjsで表現されていることが多い
-    - Vue2の終了
-    - Vueでの登場人物
-        - Vue.js
-        - Vue CLI / Vite
-        - Vuex / Pinia
-        - Vuetify
-    - 文法の違い
-        - Options API / Composition API
-            - https://ja.vuejs.org/guide/extras/composition-api-faq.html
-        - SFC(Single-File Components)
-        - refを使う理由
-            - https://ja.vuejs.org/guide/essentials/reactivity-fundamentals
-    - Tooling
-        - Vite
-            - [Vue CLI->Vite推奨](https://vuejs.org/guide/scaling-up/tooling.html)
-        - VSCode拡張機能
-            - [IDE Support](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
-            - Vue Language Features(Volar)
-            - Vue Volar extension Pack
-            - Vue2のときのVeturは使わない
-- [Vueプロジェクト作成](#create-vue-project)
-- Firebaseについて
+1. [Vue3について](#vue3について)
+1. [ツール](#ツール)
+1. [Vueプロジェクト作成](#vueプロジェクト作成)
+1. [Firebaseについて](#Firebaseについて)
+
+# Vue3について
+
+公式サイト: https://ja.vuejs.org/
+
+### Vue2の終了
+
+### Vueでの登場人物
+
+- Vue.js
+- Vue CLI / Vite
+- Vuex / Pinia
+- Vuetify
+- Typescript
+    - 公式サイトはJavascriptで表現されていることが多い
+    - 開発現場ではTypescriptを利用していることが多い
+
+## 文法の違い
+
+- Options API / Composition API
+    - https://ja.vuejs.org/guide/extras/composition-api-faq.html
+- SFC(Single-File Components)
+- refを使う理由
+    - https://ja.vuejs.org/guide/essentials/reactivity-fundamentals
+
+## ツール
+
+- Vite
+    - [Vue CLI->Vite推奨](https://vuejs.org/guide/scaling-up/tooling.html)
+- VSCode拡張機能
+    - [IDE Support](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
+    - Vue Language Features(Volar)
+    - Vue Volar extension Pack
+    - Vue2のときのVeturは使わない
 
 # 環境
 
@@ -38,20 +51,25 @@ https://v3-migration.vuejs.org/
 npm install -g yarn
 ```
 
-# Create Vue project
+# Vueプロジェクト作成
 
-### Vue CLI
+#### Vue CLI
 
+```console
 vue create [project]
+```
 
-### Vuetify
+#### Vuetify
 
+```console
 yarn create vuetify
+```
 
-### Vite
+#### Vite (今回はこれ)
 
+```console
 yarn create vite
-
+```
 
 ## 既存プロジェクトにvuetifyを追加するとき
 
@@ -81,3 +99,5 @@ const vuetify = createVuetify({
 
 createApp(App).use(vuetify).mount('#app')
 ```
+
+# Firebaseについて
