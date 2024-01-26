@@ -2,13 +2,12 @@
 
 1. [自己紹介](https://github.com/HyunwookPark)
 1. [Vue3について](#vue3について)
-1. [ツール](#ツール)
+1. [開発ツール](#開発ツール)
 1. [Vueプロジェクト作成](#vueプロジェクト作成)
+1. [Vueアプリ作成](#Vueアプリ作成)
 1. [Firebaseについて](#Firebaseについて)
 
 # Vue3について
-
-公式サイト: https://ja.vuejs.org/
 
 - Javascriptフレームワークのひとつ
 - 近年のフロントエンド技術: React / Vue / Aungular
@@ -20,10 +19,12 @@
 ### Vueでの登場人物
 
 - Vue.js
+    - 公式サイト: https://ja.vuejs.org/
 - Vue Router
     - ルーティング機能
 - Vue CLI / Vite(Vue3推奨)
     - プロジェクト管理ツール
+    - [Vue CLI->Vite推奨](https://vuejs.org/guide/scaling-up/tooling.html)
 - Vuex / Pinia(Vue3推奨)
     - 状態管理ツール
 - Vuetify
@@ -43,13 +44,10 @@ https://v3-migration.vuejs.org/
 - refを使う理由
     - https://ja.vuejs.org/guide/essentials/reactivity-fundamentals
 
-### ツール
+# 開発ツール
 
-- Vite
-    - [Vue CLI->Vite推奨](https://vuejs.org/guide/scaling-up/tooling.html)
 - VSCode拡張機能
     - [IDE Support](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
-    - Vue Language Features(Volar)
     - Vue Volar extension Pack
     - Vue2のときのVeturは使わない
 
@@ -73,23 +71,13 @@ npm install -g yarn
 
 # Vueプロジェクト作成
 
-#### Vue CLI
+Vueのプロジェクトを作成する方法は色々。
 
-```console
-vue create [project]
-```
-
-#### Vuetify
-
-```console
-yarn create vuetify
-```
-
-#### Vite (今回はこれ)
-
-```console
-yarn create vite
-```
+|プロジェクト作成方法|コマンド|
+|---|---|
+|Vue CLI|`vue create [project]`|
+|Vuetify|`yarn create vuetify`|
+|Vite (今回はこれ)|`yarn create vite`|
 
 ## Vue Routerの追加
 
@@ -216,6 +204,14 @@ app.mount('#app')
 - [Vueライフサイクルフック](https://ja.vuejs.org/api/composition-api-lifecycle)
 
 # Firebaseについて
+
+Googleが提供するウェブアプリケーション開発プラットフォーム。
+
+**提供する機能例）**
+
+- ホスティング
+- データベース
+- 認証
 
 ## Firebaseにアプリを登録
 
@@ -347,3 +343,15 @@ Hosting URL: https://vue3-tutorial-6dfff.web.app
 This will immediately make your site inaccessible! Yes
 +  Hosting has been disabled for vue3-tutorial-6dfff. Deploy a new version to re-enable.
 ```
+
+# Vueアプリ作成
+
+Vueの書き方はVue.js公式サイトがおすすめ。
+
+![](./vue_app.png)
+
+1. TODOのリスト部分を作成（固定の配列）
+1. Firebaseのデータベースから取得して表示
+1. 入力欄の作成
+1. 入力内容をFirebaseのデータベースに追加
+1. ダークモード切り替え
