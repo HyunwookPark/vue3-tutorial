@@ -288,3 +288,7 @@ https://firebase.google.com/docs/web/setup?sdk_version=v9&hl=ja#access-firebase
 #### データを入れる
 
 1. Firestore Databaseで「コレクションを開始」
+
+# Vueライフサイクルフック
+
+https://ja.vuejs.org/api/composition-api-lifecycle
