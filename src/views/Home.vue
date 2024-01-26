@@ -9,38 +9,36 @@ export interface Todo {
 }
 
 // TODOのリストを保持する配列
-const todos = ref<Todo[]>([])
+const todos = ref<Todo[]>([]) // ()の中が初期値
+const todo = ref<string>('')
 
 todos.value = []
-todos.value.push({title: 'test', done: false})
-todos.value.push({title: 'test', done: false})
+todos.value.push({title: 'Vue3勉強会の準備', done: false})
+todos.value.push({title: 'connpassで案内', done: false})
+
+function add() {
+  todos.value.push({title: todo.value, done: false})
+  todo.value = ''
+}
+
 </script>
 
 <template>
   <v-container>
     <v-row>
-      <v-col>a</v-col>
-      <v-col><v-btn prepend-icon="mdi-vuetify">Button</v-btn></v-col>
       <v-col>
-        <v-radio-group>
-          <v-radio label="Radio One" value="one"></v-radio>
-          <v-radio label="Radio Two" value="two"></v-radio>
-          <v-radio label="Radio Three" value="three"></v-radio>
-        </v-radio-group>
+        <v-text-field label="TODO" clearable v-model="todo" @keydown.enter="add"></v-text-field>
       </v-col>
-      <v-col><v-chip>Chip</v-chip></v-col>
-      <v-col><v-btn color="primary">test</v-btn></v-col>
-      <v-col><v-checkbox label="test"></v-checkbox></v-col>
+    </v-row>
+    <v-row>
       <v-col>
         <v-card>
           <!-- TODOリスト表示部分 -->
-          <v-list dense>
-            <v-list-item-group>
-              <v-list-item v-for="todo in todos" :key="todo.title">
-                <!-- TODOの完了状態によってclass属性を変更することで、チェック時に取り消し線を表現している -->
-                <v-checkbox label="todo.title" v-model="todo.done" v-bind:class="{done: todo.done}"></v-checkbox>
-              </v-list-item>
-            </v-list-item-group>
+          <v-list lines="one">
+            <v-list-item v-for="todo in todos" :key="todo.title">
+              <!-- TODOの完了状態によってclass属性を変更することで、チェック時に取り消し線を表現している -->
+              <v-checkbox :label="todo.title" v-model="todo.done" v-bind:class="{done: todo.done}"></v-checkbox>
+            </v-list-item>
           </v-list>
         </v-card>
       </v-col>
@@ -49,7 +47,7 @@ todos.value.push({title: 'test', done: false})
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
+.done {
+  text-decoration: line-through
 }
 </style>

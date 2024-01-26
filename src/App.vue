@@ -15,7 +15,7 @@ function changeTheme() {
 <template>
   <v-app>
     <v-app-bar>
-      <v-icon icon="mdi-vuetify"></v-icon>
+      <v-icon icon="mdi-vuetify" class="ml-3"></v-icon>
       Vue3 tutorial
       <v-spacer></v-spacer>
       <v-switch

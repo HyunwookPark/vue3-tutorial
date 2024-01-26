@@ -172,4 +172,8 @@ https://pictogrammers.com/library/mdi/
 
 https://vuetifyjs.com/en/styles/flex/
 
+# Spacing（余白）
+
+https://vuetifyjs.com/en/styles/spacing/#spacing
+
 # Firebaseについて
