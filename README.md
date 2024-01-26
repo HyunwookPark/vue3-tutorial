@@ -269,3 +269,22 @@ Hosting URL: https://vue3-tutorial-6dfff.web.app
 This will immediately make your site inaccessible! Yes
 +  Hosting has been disabled for vue3-tutorial-6dfff. Deploy a new version to re-enable.
 ```
+
+## Firestore Database
+
+https://firebase.google.com/docs/firestore/quickstart
+
+#### データベース作成
+
+1. ロケーションを選択して「次へ」
+1. 「テストモードで開始する」を選択して「作成」
+
+```console
+npm install firebase
+```
+
+https://firebase.google.com/docs/web/setup?sdk_version=v9&hl=ja#access-firebase
+
+#### データを入れる
+
+1. Firestore Databaseで「コレクションを開始」
