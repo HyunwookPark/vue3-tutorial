@@ -164,4 +164,12 @@ yarn add @mdi/font -D
 import '@mdi/font/css/materialdesignicons.css'
 ```
 
+# Material Design Icons
+
+https://pictogrammers.com/library/mdi/
+
+# Flex
+
+https://vuetifyjs.com/en/styles/flex/
+
 # Firebaseについて
