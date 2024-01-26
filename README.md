@@ -177,3 +177,95 @@ https://vuetifyjs.com/en/styles/flex/
 https://vuetifyjs.com/en/styles/spacing/#spacing
 
 # Firebaseについて
+
+```console
+npm install -g firebase-tools
+```
+
+```console
+> firebase --version
+13.1.0
+```
+
+```console
+firebase login
+```
+
+```console
+firebase init
+```
+
+```console
+firebase deploy
+```
+
+```console
+> firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\git\vue3-tutorial
+
+? Are you ready to proceed? Yes
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Hosting: Configure files for
+ Firebase Hosting and (optionally) set up GitHub Action deploys
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: vue3-tutorial-6dfff (vue3-tutorial)
+i  Using project vue3-tutorial-6dfff (vue3-tutorial)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? dist
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
+? File dist/index.html already exists. Overwrite? No
+i  Skipping write of dist/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
++  Firebase initialization complete!
+PS D:\git\vue3-tutorial> firebase deploy
+
+=== Deploying to 'vue3-tutorial-6dfff'...
+
+i  deploying hosting
+i  hosting[vue3-tutorial-6dfff]: beginning deploy...
+i  hosting[vue3-tutorial-6dfff]: found 10 files in dist
++  hosting[vue3-tutorial-6dfff]: file upload complete
+i  hosting[vue3-tutorial-6dfff]: finalizing version...
++  hosting[vue3-tutorial-6dfff]: version finalized
+i  hosting[vue3-tutorial-6dfff]: releasing new version...
++  hosting[vue3-tutorial-6dfff]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/vue3-tutorial-6dfff/overview
+Hosting URL: https://vue3-tutorial-6dfff.web.app
+```
+
+ホスティング無効化
+
+```console
+> firebase hosting:disable
+? Are you sure you want to disable Firebase Hosting for the site vue3-tutorial-6dfff
+This will immediately make your site inaccessible! Yes
++  Hosting has been disabled for vue3-tutorial-6dfff. Deploy a new version to re-enable.
+```
