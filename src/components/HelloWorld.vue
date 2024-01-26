@@ -1,34 +1,41 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+export interface Todo {
+  // TODOのタイトル
+  title: string
+  // TODOの完了状態（true: 完了、false: 未完了）
+  done: boolean
+}
+
 defineProps<{ msg: string }>()
 
-const count = ref(0)
+// TODOのリストを保持する配列
+const todos = ref<Todo[]>([])
+
+todos.value = []
+todos.value.push({title: 'test', done: false})
+// const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <v-btn color="success" @click="count++">count is {{ count }}</v-btn>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-card>
+          <!-- TODOリスト表示部分 -->
+          <v-list dense>
+            <v-list-item-group>
+              <v-list-item v-for="todo in todos" :key="todo.title">
+                <!-- TODOの完了状態によってclass属性を変更することで、チェック時に取り消し線を表現している -->
+                <v-checkbox :label="todo.title" v-model="todo.done" v-bind:class="{done: todo.done}"></v-checkbox>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped>
