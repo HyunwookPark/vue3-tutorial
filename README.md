@@ -9,27 +9,38 @@
 
 公式サイト: https://ja.vuejs.org/
 
+- Javascriptフレームワークのひとつ
+- 近年のフロントエンド技術: React / Vue / Aungular
+
 ### Vue2の終了
+
+2023年12月31日 Vue2の公式サポート終了。
 
 ### Vueでの登場人物
 
 - Vue.js
-- Vue CLI / Vite
-- Vuex / Pinia
+- Vue CLI / Vite(Vue3推奨)
+    - プロジェクト管理ツール
+- Vuex / Pinia(Vue3推奨)
+    - 状態管理ツール
 - Vuetify
+    - UIライブラリ（マテリアルデザイン）
 - Typescript
     - 公式サイトはJavascriptで表現されていることが多い
     - 開発現場ではTypescriptを利用していることが多い
 
-## 文法の違い
+### Vue3移行ガイド
+
+https://v3-migration.vuejs.org/
+
+### Vue3の特徴
 
 - Options API / Composition API
     - https://ja.vuejs.org/guide/extras/composition-api-faq.html
-- SFC(Single-File Components)
 - refを使う理由
     - https://ja.vuejs.org/guide/essentials/reactivity-fundamentals
 
-## ツール
+### ツール
 
 - Vite
     - [Vue CLI->Vite推奨](https://vuejs.org/guide/scaling-up/tooling.html)
@@ -39,19 +50,19 @@
     - Vue Volar extension Pack
     - Vue2のときのVeturは使わない
 
-# 環境
+### 環境
 
-- nvmでnodeのバージョンを管理
+#### nvmでnodeのバージョンを管理
 
 ```console
 nvm list
 ```
 
+```console
+nvm use 20.11.0
+```
 
-
-# Vue3移行ガイド
-
-https://v3-migration.vuejs.org/
+#### パッケージマネージャーをインストール
 
 ```console
 npm install -g yarn
