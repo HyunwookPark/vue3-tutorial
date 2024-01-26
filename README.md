@@ -77,6 +77,50 @@ yarn create vuetify
 yarn create vite
 ```
 
+## vue-routerの追加
+
+```console
+yarn add vue-router@4
+```
+
+`index.ts`ファイルを作成
+
+```ts
+// src/router/index.ts
+import { createRouter, createWebHistory } from 'vue-router'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('@/views/Home.vue')
+  },
+  // その他のルートをここに追加
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+export default router
+```
+
+App.vue
+
+```vue
+<script setup lang="ts">
+</script>
+
+<template>
+  <v-app>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
+</template>
+```
+
 ## 既存プロジェクトにvuetifyを追加するとき
 
 https://vuetifyjs.com/en/getting-started/installation/#existing-projects
@@ -104,6 +148,20 @@ const vuetify = createVuetify({
 })
 
 createApp(App).use(vuetify).mount('#app')
+```
+
+マテリアルアイコンはインストールが必要
+
+https://vuetifyjs.com/en/components/icons/#font-awesome
+
+`installation page`にアクセスできない。
+
+```console
+yarn add @mdi/font -D
+```
+
+```ts
+import '@mdi/font/css/materialdesignicons.css'
 ```
 
 # Firebaseについて
