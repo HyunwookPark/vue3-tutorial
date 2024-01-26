@@ -1,5 +1,6 @@
 # 目次
 
+1. [自己紹介](https://github.com/HyunwookPark)
 1. [Vue3について](#vue3について)
 1. [ツール](#ツール)
 1. [Vueプロジェクト作成](#vueプロジェクト作成)
@@ -19,6 +20,8 @@
 ### Vueでの登場人物
 
 - Vue.js
+- Vue Router
+    - ルーティング機能
 - Vue CLI / Vite(Vue3推奨)
     - プロジェクト管理ツール
 - Vuex / Pinia(Vue3推奨)
@@ -88,7 +91,7 @@ yarn create vuetify
 yarn create vite
 ```
 
-## vue-routerの追加
+## Vue Routerの追加
 
 ```console
 yarn add vue-router@4
@@ -125,6 +128,10 @@ App.vue
 
 <template>
   <v-app>
+    <v-app-bar>
+      <v-icon icon="mdi-vuetify" class="ml-3"></v-icon>
+      Vue3 tutorial
+    </v-app-bar>
     <v-main>
       <router-view/>
     </v-main>
@@ -132,7 +139,9 @@ App.vue
 </template>
 ```
 
-## 既存プロジェクトにvuetifyを追加するとき
+## Vuetifyの追加
+
+既存プロジェクトにvuetifyを追加するとき
 
 https://vuetifyjs.com/en/getting-started/installation/#existing-projects
 
@@ -161,33 +170,57 @@ const vuetify = createVuetify({
 createApp(App).use(vuetify).mount('#app')
 ```
 
+### アイコンのインストール
+
 マテリアルアイコンはインストールが必要
 
 https://vuetifyjs.com/en/components/icons/#font-awesome
 
-`installation page`にアクセスできない。
+※`installation page`にアクセスできない。
 
 ```console
 yarn add @mdi/font -D
 ```
 
 ```ts
-import '@mdi/font/css/materialdesignicons.css'
+import { createApp } from 'vue'
+// import './style.css'
+import App from './App.vue'
+
+// Vuetify
+import '@mdi/font/css/materialdesignicons.css' // 追記
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import router from './router'
+
+
+const vuetify = createVuetify({
+  components,
+  directives,
+  ssr: true,
+})
+
+const app = createApp(App)
+app.use(router)
+app.use(vuetify)
+app.mount('#app')
 ```
 
-# Material Design Icons
+## その他参考
 
-https://pictogrammers.com/library/mdi/
-
-# Flex
-
-https://vuetifyjs.com/en/styles/flex/
-
-# Spacing（余白）
-
-https://vuetifyjs.com/en/styles/spacing/#spacing
+- [Material Design Icons](https://pictogrammers.com/library/mdi/)
+- [Flex](https://vuetifyjs.com/en/styles/flex/)
+- [Spacing（余白）](https://vuetifyjs.com/en/styles/spacing/#spacing)
 
 # Firebaseについて
+
+## Firebaseの準備
+
+
+
+firebaseツールをインストール
 
 ```console
 npm install -g firebase-tools
@@ -197,6 +230,8 @@ npm install -g firebase-tools
 > firebase --version
 13.1.0
 ```
+
+firebaseにログイン
 
 ```console
 firebase login
@@ -281,6 +316,34 @@ This will immediately make your site inaccessible! Yes
 +  Hosting has been disabled for vue3-tutorial-6dfff. Deploy a new version to re-enable.
 ```
 
+## Firebaseにアプリを登録
+
+
+
+```console
+npm install firebase
+```
+
+```js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBhMKYUd79lUUGhJ-YvJP5LaJuSoSabzFA",
+  authDomain: "vue3-tutorial-24a32.firebaseapp.com",
+  projectId: "vue3-tutorial-24a32",
+  storageBucket: "vue3-tutorial-24a32.appspot.com",
+  messagingSenderId: "285819121181",
+  appId: "1:285819121181:web:49430ee9572c9bca9da0f4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+```
+
 ## Firestore Database
 
 https://firebase.google.com/docs/firestore/quickstart
@@ -289,10 +352,6 @@ https://firebase.google.com/docs/firestore/quickstart
 
 1. ロケーションを選択して「次へ」
 1. 「テストモードで開始する」を選択して「作成」
-
-```console
-npm install firebase
-```
 
 https://firebase.google.com/docs/web/setup?sdk_version=v9&hl=ja#access-firebase
 

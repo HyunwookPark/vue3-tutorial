@@ -5,11 +5,9 @@ import { useTheme } from 'vuetify'
 const darkTheme = ref(false)
 const theme = useTheme()
 
-
 function changeTheme() {
   theme.global.name.value = darkTheme.value? 'dark' : 'light'
 }
-
 </script>
 
 <template>
