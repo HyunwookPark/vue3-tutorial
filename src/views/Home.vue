@@ -14,25 +14,24 @@ const todos = ref<Todo[]>([])
 todos.value = []
 todos.value.push({title: 'test', done: false})
 todos.value.push({title: 'test', done: false})
-// const count = ref(0)
 </script>
 
 <template>
   <v-container>
     <v-row>
-      <v-col md="1">a</v-col>
-      <v-col md="1"><v-btn prepend-icon="mdi-vuetify"> Button </v-btn></v-col>
-      <v-col md="1">
+      <v-col>a</v-col>
+      <v-col><v-btn prepend-icon="mdi-vuetify">Button</v-btn></v-col>
+      <v-col>
         <v-radio-group>
           <v-radio label="Radio One" value="one"></v-radio>
           <v-radio label="Radio Two" value="two"></v-radio>
           <v-radio label="Radio Three" value="three"></v-radio>
         </v-radio-group>
       </v-col>
-      <v-col md="1"><v-chip>Chip</v-chip></v-col>
-      <v-col md="1"><v-btn color="primary">test</v-btn></v-col>
-      <v-col md="1"><v-checkbox label="test"></v-checkbox></v-col>
-      <v-col md="6">
+      <v-col><v-chip>Chip</v-chip></v-col>
+      <v-col><v-btn color="primary">test</v-btn></v-col>
+      <v-col><v-checkbox label="test"></v-checkbox></v-col>
+      <v-col>
         <v-card>
           <!-- TODOリスト表示部分 -->
           <v-list dense>
