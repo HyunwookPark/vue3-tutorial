@@ -213,12 +213,52 @@ app.mount('#app')
 - [Material Design Icons](https://pictogrammers.com/library/mdi/)
 - [Flex](https://vuetifyjs.com/en/styles/flex/)
 - [Spacing（余白）](https://vuetifyjs.com/en/styles/spacing/#spacing)
+- [Vueライフサイクルフック](https://ja.vuejs.org/api/composition-api-lifecycle)
 
 # Firebaseについて
 
-## Firebaseの準備
+## Firebaseにアプリを登録
 
+```console
+npm install firebase
+```
 
+```js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBhMKYUd79lUUGhJ-YvJP5LaJuSoSabzFA",
+  authDomain: "vue3-tutorial-24a32.firebaseapp.com",
+  projectId: "vue3-tutorial-24a32",
+  storageBucket: "vue3-tutorial-24a32.appspot.com",
+  messagingSenderId: "285819121181",
+  appId: "1:285819121181:web:49430ee9572c9bca9da0f4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+```
+
+## Firestore Database
+
+https://firebase.google.com/docs/firestore/quickstart
+
+#### データベース作成
+
+1. ロケーションを選択して「次へ」
+1. 「テストモードで開始する」を選択して「作成」
+
+- [データベースへのアクセス方法](https://firebase.google.com/docs/web/setup?sdk_version=v9&hl=ja#access-firebase)
+
+#### データを入れる
+
+1. Firestore Databaseで「コレクションを開始」
+
+## Firebaseデプロイの準備
 
 firebaseツールをインストール
 
@@ -235,14 +275,6 @@ firebaseにログイン
 
 ```console
 firebase login
-```
-
-```console
-firebase init
-```
-
-```console
-firebase deploy
 ```
 
 ```console
@@ -315,50 +347,3 @@ Hosting URL: https://vue3-tutorial-6dfff.web.app
 This will immediately make your site inaccessible! Yes
 +  Hosting has been disabled for vue3-tutorial-6dfff. Deploy a new version to re-enable.
 ```
-
-## Firebaseにアプリを登録
-
-
-
-```console
-npm install firebase
-```
-
-```js
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBhMKYUd79lUUGhJ-YvJP5LaJuSoSabzFA",
-  authDomain: "vue3-tutorial-24a32.firebaseapp.com",
-  projectId: "vue3-tutorial-24a32",
-  storageBucket: "vue3-tutorial-24a32.appspot.com",
-  messagingSenderId: "285819121181",
-  appId: "1:285819121181:web:49430ee9572c9bca9da0f4"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-```
-
-## Firestore Database
-
-https://firebase.google.com/docs/firestore/quickstart
-
-#### データベース作成
-
-1. ロケーションを選択して「次へ」
-1. 「テストモードで開始する」を選択して「作成」
-
-https://firebase.google.com/docs/web/setup?sdk_version=v9&hl=ja#access-firebase
-
-#### データを入れる
-
-1. Firestore Databaseで「コレクションを開始」
-
-# Vueライフサイクルフック
-
-https://ja.vuejs.org/api/composition-api-lifecycle
