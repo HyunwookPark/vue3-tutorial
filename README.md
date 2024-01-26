@@ -43,6 +43,12 @@
 
 - nvmでnodeのバージョンを管理
 
+```console
+nvm list
+```
+
+
+
 # Vue3移行ガイド
 
 https://v3-migration.vuejs.org/
