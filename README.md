@@ -11,6 +11,7 @@
 
 - Javascriptフレームワークのひとつ
 - 近年のフロントエンド技術: React / Vue / Aungular
+- 動的なサイトを作りやすい
 
 ### Vue2の終了
 
